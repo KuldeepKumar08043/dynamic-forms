@@ -23,7 +23,7 @@ module.exports = {
     })
   ],
   output: {
-    path: path.resolve(__dirname,  'build'),
+    path: path.resolve(__dirname, 'build'),
     publicPath: process.env.NODE_ENV === 'production' ? '/dynamic-form-json/' : '/',
     filename: 'bundle.js',
   },
@@ -33,5 +33,10 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
   }
 };
